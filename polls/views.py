@@ -9,6 +9,7 @@ def detail(request, question_id):
 
 def post(request):
     if request.method == "POST":
-         return HttpResponse("POST, Menuda")
+    	msg = request.POST['choice']
+		return HttpResponse("POST, Menuda [%s]", % msg)
     else:
         return HttpResponse("GET, Menuda")
